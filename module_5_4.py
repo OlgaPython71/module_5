@@ -2,9 +2,9 @@ class House:
     houses_history = []
 
     def __new__(cls, *args, **kwargs):
-        for i in args:
-            cls.houses_history.append(i)
-            return cls.houses_history
+        instance = super().__new__(cls)
+        cls.houses_history.append(args)
+        return instance
 
     def __init__(self, name, number_of_floors):
         self.name = name
