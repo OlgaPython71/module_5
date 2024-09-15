@@ -6,13 +6,13 @@ class Animal:
         self.name = name
 
     def eat(self, food):
-        self.food = Plant.name
-        if edible = True:
-            print(f'{self.name} съел {food.name}')
-            fed = True
+        food = Plant()
+        if Plant().edible == True:
+            print(f'{self.name} съел {food}')
+            self.fed = True
         else:
-            print(f'{self.name} не стал есть {food.name}')
-            alive = False
+            print(f'{self.name} не стал есть {food}')
+            self.alive = False
 
 
 class Mammal(Animal):
@@ -46,3 +46,10 @@ p2 = Fruit('Заводной апельсин')
 
 print(a1.name)
 print(p1.name)
+
+print(a1.alive)
+print(a2.fed)
+a1.eat(p1)
+a2.eat(p2)
+print(a1.alive)
+print(a2.fed)
