@@ -14,34 +14,35 @@ class User:
     def __int__(self):
         return self.age
 
-class Video:
-    time_now = 0
 
-    def __init__(self, title, duration, adult_mode=False):
+class Video:
+
+    def __init__(self, title, duration):
         self.title = title
         self.duration = duration
+        self.time_now = 0
+        self.adult_mode = False
 
     def __str__(self):
         return self.title
 
-class UrTube:
+
+class UrTube(User, Video):
     def __init__(self):
         self.users = []
         self.videos = []
+        # self.current_user = current_user
 
-    def add(self, i, Video):
-        if i != Video:
-            self.videos.append(i)
+    def add(self, name):
+        if name != super().title:
+            self.videos.append(name)
 
 
-
-
-ur = UrTube()
+# ur = UrTube()
 v1 = Video('Лучший язык программирования 2024 года', 200)
-v2 = Video('Для чего девушкам парень программист?', 10, adult_mode=True)
+v2 = Video('Для чего девушкам парень программист?', 10)
 
 # Добавление видео
-ur.add(v1, v2)
-print(ur)
+# ur.add(v1, v2)
 print(v1)
-print(v2)
+
