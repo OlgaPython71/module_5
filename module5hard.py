@@ -22,14 +22,22 @@ class UrTube:
         self.current_user = None
 
     def add(self, *args):
-        self.videos.append(args)
+        for new_video in args:
+            for video in self.videos:
+                if new_video.title == video.title:
+                    break
+            else:
+                self.videos.append(new_video)
+
 
 
 ur = UrTube()
 v1 = Video('Лучший язык программирования 2024 года', 200)
 v2 = Video('Для чего девушкам парень программист?', 10)
+v3 = Video('Лучший язык программирования 2024 года', 200)
 
 # Добавление видео
-ur.add(v1, v2)
-print(v1)
-
+ur.add(v1, v2, v3)
+print(ur.videos)
+for video in ur.videos:
+    print(video.title)
