@@ -38,11 +38,11 @@ class UrTube(User, Video):
             self.videos.append(name)
 
 
-# ur = UrTube()
+ur = UrTube()
 v1 = Video('Лучший язык программирования 2024 года', 200)
 v2 = Video('Для чего девушкам парень программист?', 10)
 
 # Добавление видео
-# ur.add(v1, v2)
+ur.add(v1, v2)
 print(v1)
 
