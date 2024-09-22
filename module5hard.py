@@ -1,41 +1,28 @@
 class User:
 
     def __init__(self, nickname, password, age):
-        self.nickname = nickname
-        self.password = password
-        self.age = age
-
-    def __str__(self):
-        return self.nickname
-
-    def __hash__(self):
-        return hash(self.password)
-
-    def __int__(self):
-        return self.age
+        self.nickname = str(nickname)
+        self.password = hash(password)
+        self.age = int(age)
 
 
 class Video:
 
     def __init__(self, title, duration):
-        self.title = title
+        self.title = str(title)
         self.duration = duration
         self.time_now = 0
         self.adult_mode = False
 
-    def __str__(self):
-        return self.title
 
-
-class UrTube(User, Video):
+class UrTube:
     def __init__(self):
         self.users = []
         self.videos = []
-        # self.current_user = current_user
+        self.current_user = None
 
-    def add(self, name):
-        if name != super().title:
-            self.videos.append(name)
+    def add(self, *args):
+        self.videos.append(args)
 
 
 ur = UrTube()
