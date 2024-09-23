@@ -4,9 +4,12 @@ import time
 class User:
 
     def __init__(self, nickname, password, age):
-        self.nickname = str(nickname)
+        self.nickname = nickname
         self.password = hash(password)
         self.age = int(age)
+
+    def __str__(self):
+        return self.nickname
 
 
 class Video:
